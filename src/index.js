@@ -1,9 +1,14 @@
 const express = require('express')
 const app = express()
 const port = 3000
+var users = [];
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+app.get('/users', function (req, res) {
+    res.send(users);
 })
 
 app.listen(port, () => {
